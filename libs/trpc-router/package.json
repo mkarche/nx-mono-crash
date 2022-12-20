@@ -1,0 +1,12 @@
+{
+  "name": "@integrated-mono/trpc-router",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "dependencies": {
+    "@tanstack/react-query": "^4.20.4",
+    "@trpc/client": "^10.5.0",
+    "@trpc/next": "^10.5.0",
+    "@trpc/react-query": "^10.5.0",
+    "@trpc/server": "^10.5.0"
+  }
+}
