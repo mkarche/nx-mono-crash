@@ -1,0 +1,35 @@
+{
+  "name": "expo-crash",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "*",
+    "@expo/metro-config": "*",
+    "@expo/webpack-config": "*",
+    "@nanostores/react": "*",
+    "@nrwl/expo": "*",
+    "@nrwl/react": "*",
+    "@testing-library/jest-native": "*",
+    "@testing-library/react-native": "*",
+    "expo": "~47.0.9",
+    "expo-splash-screen": "~0.17.5",
+    "expo-status-bar": "~1.4.2",
+    "nanoid": "*",
+    "nanostores": "*",
+    "nativewind": "^2.0.11",
+    "react": "18.1.0",
+    "react-native": "0.70.5",
+    "react-native-get-random-values": "*",
+    "react-native-svg": "*",
+    "react-native-web": "*"
+  },
+  "scripts": {
+    "postinstall": "rm -r node_modules && cd ../../ && yarn install && npx nx sync-deps expo-crash && npx nx ensure-symlink expo-crash",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  }
+}

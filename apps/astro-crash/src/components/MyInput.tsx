@@ -9,7 +9,7 @@ const MyInput = (props: Props) => {
     <>
       <div>MyInput {name}</div>
       <input
-        className="border-2 border-indigo-400 rounded my-2"
+        className="my-2 rounded border-2 border-indigo-400"
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}

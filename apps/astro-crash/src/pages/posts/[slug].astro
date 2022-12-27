@@ -1,0 +1,41 @@
+---
+import Card from '../../components/Card.astro';
+import Showcase from '../../components/Showcase.astro';
+import Layout from '../../layouts/Layout.astro';
+
+interface FrontMatter {
+  title: string;
+  excerpt: string;
+  slug: string;
+  date: Date;
+  author: string;
+}
+
+interface Post {
+  frontMatter: FrontMatter;
+  content: string;
+}
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob('../../posts/*.md');
+  return posts.map((post) => ({
+    params: { slug: post.frontmatter.slug },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+const { frontmatter, Content } = Astro.props.post;
+---
+
+<Layout>
+  <Showcase heading={frontmatter.title} text={frontmatter.author} />
+  <div>
+    <Card>
+      <a class="btn" href="/blog">Go Back</a>
+      <h3>{frontmatter.title}</h3>
+      <h3>{new Date(frontmatter.date).toLocaleDateString()}</h3>
+      <Content />
+    </Card>
+  </div>
+</Layout>

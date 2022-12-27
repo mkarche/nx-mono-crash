@@ -1,0 +1,20 @@
+---
+export interface Props {
+  black?: boolean;
+}
+const { black = false } = Astro.props as Props;
+---
+
+<div class={`card ${black ? 'bg-gray-600 text-white' : 'bg-white'}`}>
+  <slot />
+</div>
+
+<style>
+  .card {
+    /* background: #fff; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+</style>

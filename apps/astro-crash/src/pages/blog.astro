@@ -1,0 +1,44 @@
+---
+import Card from '../components/Card.astro';
+import Showcase from '../components/Showcase.astro';
+import Layout from '../layouts/Layout.astro';
+
+const remotePosts = await fetch(
+  'https://jsonplaceholder.typicode.com/posts/?_limit=5'
+).then((res) => res.json());
+
+const localPosts = await Astro.glob('../posts/*.md');
+---
+
+<Layout>
+  <section class="page-content">
+    <Showcase heading="Astro Blog" text="Simple blogs built with Astro" />
+    <div class="container">
+      <div>
+        <h3 class="my-8 text-2xl font-bold">Local Posts</h3>
+        {
+          localPosts.map((post) => (
+            <Card>
+              <h3>{post.frontmatter.title}</h3>
+              <p>{post.frontmatter.excerpt}</p>
+              <a class="btn" href={`/posts/${post.frontmatter.slug}`}>
+                Read More...
+              </a>
+            </Card>
+          ))
+        }
+      </div>
+      <div>
+        <h3 class="my-8 text-2xl font-bold">Remote Posts</h3>
+        {
+          remotePosts.map((post: any) => (
+            <Card>
+              <h3>{post.title}</h3>
+              <p>{post.body}</p>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
