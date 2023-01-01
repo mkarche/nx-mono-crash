@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 
 import { styled } from 'nativewind';
-
 import GoalList from '../components/GoalList';
 import GoalInput from '../components/GoalInput';
 import MyButton from '../components/MyButton';

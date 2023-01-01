@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@integrated-mono/astro/store": ["libs/astro/store/src/index.ts"],
+      "@integrated-mono/expo/shared-ui": ["libs/expo/shared-ui/src/index.ts"],
       "@integrated-mono/my-plugin": ["libs/my-plugin/src/index.ts"],
       "@integrated-mono/schemas": ["libs/schemas/src/index.ts"],
       "@integrated-mono/trpc-router": ["libs/trpc-router/src/index.ts"],

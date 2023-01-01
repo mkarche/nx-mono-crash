@@ -58,3 +58,4 @@ web-build/
 
 apps/mobile-e2e/artifacts
 apps/expo-crash-e2e/artifacts
+apps/expo-guess-game-e2e/artifacts
